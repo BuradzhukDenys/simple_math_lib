@@ -77,3 +77,17 @@ TEST_F(MathLibTestFixture, GreatestCommonDivider)
 {
     EXPECT_EQ(MathLib::GCD(10, 6), 2);
 }
+
+TEST_F(MathLibTestFixture, ArithmeticMean)
+{
+    double arr[] = {1.0, 2.0, 3.0, 4.0, 5.0};
+	double arrNegative[] = { -5.0, 10.0, -15.0 };
+	double arrSingle[] = { 42.0 };
+	double arrFloat[] = { 1.5, 2.5, 3.7 };
+	double arrEmpty[] = {};
+    EXCEPT_EQ(MathLib::arithmeticMean(arr, 5), 3.0);
+    EXCEPT_EQ(MathLib::arithmeticMean(arrNegative, 3), -3.33333);
+    EXCEPT_EQ(MathLib::arithmeticMean(arrSingle, 1), 42.0);
+	EXCEPT_EQ(MathLib::arithmeticMean(arrFloat, 3), 2.56667);
+	EXCEPT_THROW(MathLib::arithmeticMean(arrEmpty, 0), std::invalid_argument);
+}
