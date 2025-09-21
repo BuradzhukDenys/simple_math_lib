@@ -42,5 +42,21 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
+
+    double arithmeticMean(const double* arr, int size)
+    {
+        if (size <= 0)
+        {
+			throw std::invalid_argument("Array size must be greater than zero.");
+        }
+
+        double sum = 0.0;
+        for (int i = 0; i < size; i++)
+        {
+			sum += arr[i];
+        }
+
+        return sum / size;
+    }
 }
 
