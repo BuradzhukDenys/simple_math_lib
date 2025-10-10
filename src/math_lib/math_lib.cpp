@@ -42,7 +42,7 @@ namespace MathLib
 		if (b == 0) return a;
 		return GCD(b, a % b);
 	}
-
+    
     int findThirdAngle(int angle1, int angle2)
     {
         if (angle1 <= 0 || angle2 <= 0 || (angle1 + angle2) >= 180)
